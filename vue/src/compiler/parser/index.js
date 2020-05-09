@@ -431,7 +431,6 @@ export function processElement (
   options: CompilerOptions
 ) {
   processKey(element)
-
   // determine whether this is a plain element after
   // removing structural attributes
   element.plain = (
@@ -732,6 +731,7 @@ function getSlotName (binding) {
 
 // handle <slot/> outlets
 function processSlotOutlet (el) {
+  debugger
   if (el.tag === 'slot') {
     el.slotName = getBindingAttr(el, 'name')
     if (process.env.NODE_ENV !== 'production' && el.key) {

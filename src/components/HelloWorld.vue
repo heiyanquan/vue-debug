@@ -1,23 +1,27 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    this is home page
+    <header><slot name="header"></slot></header>
+    <main><slot>默认内容</slot></main>
+    <footer><slot name="footer"></slot></footer>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
+<style scoped>
+h1, h2 {
+  font-weight: normal;
 }
 ul {
   list-style-type: none;
