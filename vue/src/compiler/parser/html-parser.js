@@ -102,7 +102,8 @@ export function parseHTML (html, options) {
           parseEndTag(endTagMatch[1], curIndex, index)
           continue
         }
-
+        
+        debugger
         // Start tag:
         const startTagMatch = parseStartTag()
         if (startTagMatch) {

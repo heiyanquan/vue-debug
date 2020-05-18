@@ -93,7 +93,6 @@ export function parse (
   postTransforms = pluckModuleFunction(options.modules, 'postTransformNode')
 
   delimiters = options.delimiters
-
   const stack = []
   const preserveWhitespace = options.preserveWhitespace !== false
   const whitespaceOption = options.whitespace
@@ -731,7 +730,6 @@ function getSlotName (binding) {
 
 // handle <slot/> outlets
 function processSlotOutlet (el) {
-  debugger
   if (el.tag === 'slot') {
     el.slotName = getBindingAttr(el, 'name')
     if (process.env.NODE_ENV !== 'production' && el.key) {
