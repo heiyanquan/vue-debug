@@ -5,29 +5,37 @@ import Vue from '../vue/dist/vue'
 
 Vue.config.productionTip = false
 
+let Child = {
+  template: '<div class="child">' +
+  '<slot text="Hello " :msg="msg"></slot>' +
+  '</div>',
+  data() {
+    return {
+      msg: 'Vue'
+    }
+  }
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: `<div class="wrapper">
-    <div class="row" v-for="(item, index) in list">{{item.value}}</div>
-  </div>`,
+  template: '<div>' +
+  '<child>' +
+  '<template slot-scope="props">' +
+  '<p class="p1">Hello from parent</p>' +
+  '<p class="p2">{{ props.text + props.msg}}</p>' +
+  '</template>' +
+  '</child>' +
+  '</div>',
   data () {
     return {
-      list: [
-        {
-          key: 'aaa',
-          value: 'aaa'
-        },
-        {
-          key: 'bbb',
-          value: 'bbb'
-        },
-        {
-          key: 'ccc',
-          value: 'ccc'
-        }
-      ]
+      title: '我是标题',
+      msg: '我是内容',
+      desc: '其它信息'
     }
+  },
+  components: {
+    Child
   },
   methods: {
     
