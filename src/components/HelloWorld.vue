@@ -2,6 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     this is home page
+    <h2>{{firstComName}}</h2>
+    <h3>{{secondComName}}</h3>
+    <button @click="updateName">click button</button>
   </div>
 </template>
 
@@ -10,11 +13,41 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  data() {
+    return {
+      firstName: 'Foo',
+      lastName: 'Bar',
+      list: ['aaa', 'bbb', 'ccc']
+    }
+  },
+  methods: {
+    updateName() {
+      this.firstName = 'firstName Foo'
+      this.lastName = 'lastName Bar'
+    }
+  },
+  watch: {
+    firstName (newVal, oldVal) {
+      console.log(newVal)
+      console.log(oldVal)
+    },
+    lastName (newVal, oldVal) {
+      console.log(newVal)
+      console.log(oldVal)
+    }
+  },
+  computed: {
+    firstComName() {
+      return `${this.firstName}-aaa`
+    },
+    secondComName() {
+      return `${this.lastName}-bbb`
+    }
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 h3 {
   margin: 40px 0 0;
