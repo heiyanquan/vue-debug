@@ -53,6 +53,7 @@ export function generate (
 }
 
 export function genElement (el: ASTElement, state: CodegenState): string {
+  debugger
   if (el.parent) {
     el.pre = el.pre || el.parent.pre
   }

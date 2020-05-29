@@ -19,19 +19,16 @@ let Child = {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<div>' +
-  '<child>' +
-  '<template slot-scope="props">' +
-  '<p class="p1">Hello from parent</p>' +
-  '<p class="p2">{{ props.text + props.msg}}</p>' +
-  '</template>' +
-  '</child>' +
-  '</div>',
+  template: `<div class="wrapper">
+    <p class="p1">111</p>
+    <div class="div1">{{title}}</div>
+  </div>`,
   data () {
     return {
       title: '我是标题',
       msg: '我是内容',
-      desc: '其它信息'
+      desc: '其它信息',
+      list: ['aaa', 'bbb', 'ccc']
     }
   },
   components: {
