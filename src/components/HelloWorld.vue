@@ -2,8 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     this is home page
-    <h2>{{firstComName}}</h2>
-    <h3>{{secondComName}}</h3>
+    <h2>{{firstComputedName}}</h2>
+    <h3>{{secondComputedName}}</h3>
     <button @click="updateName">click button</button>
   </div>
 </template>
@@ -38,11 +38,11 @@ export default {
     }
   },
   computed: {
-    firstComName() {
-      return `${this.firstName}-aaa`
+    firstComputedName() {
+      return `${this.firstName}-${this.lastName}-computedaaa`
     },
-    secondComName() {
-      return `${this.lastName}-bbb`
+    secondComputedName() {
+      return `${this.lastName}-computedbbb`
     }
   },
 }

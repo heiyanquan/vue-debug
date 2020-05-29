@@ -79,7 +79,6 @@ export default class Watcher {
     if (typeof expOrFn === 'function') {
       this.getter = expOrFn
     } else {
-      
       this.getter = parsePath(expOrFn)
       if (!this.getter) {
         this.getter = noop
