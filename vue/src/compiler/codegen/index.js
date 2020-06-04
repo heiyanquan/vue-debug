@@ -53,7 +53,6 @@ export function generate (
 }
 
 export function genElement (el: ASTElement, state: CodegenState): string {
-  debugger
   if (el.parent) {
     el.pre = el.pre || el.parent.pre
   }
@@ -162,7 +161,6 @@ function genIfConditions (
   if (!conditions.length) {
     return altEmpty || '_e()'
   }
-
   const condition = conditions.shift()
   if (condition.exp) {
     return `(${condition.exp})?${
@@ -219,7 +217,6 @@ export function genFor (
 
 export function genData (el: ASTElement, state: CodegenState): string {
   let data = '{'
-
   // directives first.
   // directives may mutate the el's other properties before they are generated.
   const dirs = genDirectives(el, state)

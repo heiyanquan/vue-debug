@@ -19,22 +19,29 @@ let Child = {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: `<div class="wrapper">
-    <p class="p1">111</p>
-    <div class="div1">{{title}}</div>
-  </div>`,
+  template: '<div>' +
+  '<child>' +
+  '<template slot-scope="props">' +
+  '<p>Hello from parent</p>' +
+  '<p>{{ props.text + props.msg}}</p>' +
+  '</template>' +
+  '</child>' +
+  '</div>',
   data () {
     return {
       title: '我是标题',
       msg: '我是内容',
       desc: '其它信息',
-      list: ['aaa', 'bbb', 'ccc']
+      list: ['aaa', 'bbb', 'ccc'],
+      bindCls: 'list_bind'
     }
   },
   components: {
     Child
   },
   methods: {
-    
+    selectHandler() {
+      console.log('Child select!')
+    }
   },
 })

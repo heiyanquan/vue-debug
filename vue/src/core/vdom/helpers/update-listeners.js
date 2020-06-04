@@ -58,6 +58,7 @@ export function updateListeners (
   createOnceHandler: Function,
   vm: Component
 ) {
+  
   let name, def, cur, old, event
   for (name in on) {
     def = cur = on[name]

@@ -105,7 +105,6 @@ function genHandler (handler: ASTElementHandler | Array<ASTElementHandler>): str
   const isMethodPath = simplePathRE.test(handler.value)
   const isFunctionExpression = fnExpRE.test(handler.value)
   const isFunctionInvocation = simplePathRE.test(handler.value.replace(fnInvokeRE, ''))
-
   if (!handler.modifiers) {
     if (isMethodPath || isFunctionExpression) {
       return handler.value
