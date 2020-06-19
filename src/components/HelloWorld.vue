@@ -1,10 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    this is home page
-    <h2>{{firstComputedName}}</h2>
-    <h3>{{secondComputedName}}</h3>
-    <button @click="updateName">click button</button>
+    <h3>{{ msg }}</h3>
   </div>
 </template>
 

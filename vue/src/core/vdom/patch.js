@@ -70,7 +70,6 @@ function createKeyToOldIdx (children, beginIdx, endIdx) {
 export function createPatchFunction (backend) {
   let i, j
   const cbs = {}
-
   const { modules, nodeOps } = backend
 
   for (i = 0; i < hooks.length; ++i) {
@@ -119,7 +118,6 @@ export function createPatchFunction (backend) {
       config.isUnknownElement(vnode.tag)
     )
   }
-
   let creatingElmInVPre = 0
 
   function createElm (
@@ -509,7 +507,6 @@ export function createPatchFunction (backend) {
     if (oldVnode === vnode) {
       return
     }
-
     if (isDef(vnode.elm) && isDef(ownerArray)) {
       // clone reused vnode
       vnode = ownerArray[index] = cloneVNode(vnode)
@@ -702,7 +699,6 @@ export function createPatchFunction (backend) {
       if (isDef(oldVnode)) invokeDestroyHook(oldVnode)
       return
     }
-
     let isInitialPatch = false
     const insertedVnodeQueue = []
 
