@@ -160,7 +160,6 @@ export function createPatchFunction (backend) {
           )
         }
       }
-
       vnode.elm = vnode.ns
         ? nodeOps.createElementNS(vnode.ns, tag)
         : nodeOps.createElement(tag, vnode)
@@ -701,7 +700,6 @@ export function createPatchFunction (backend) {
     }
     let isInitialPatch = false
     const insertedVnodeQueue = []
-
     if (isUndef(oldVnode)) {
       // empty mount (likely as component), create new root element
       isInitialPatch = true
@@ -742,7 +740,6 @@ export function createPatchFunction (backend) {
         // replacing existing element
         const oldElm = oldVnode.elm
         const parentElm = nodeOps.parentNode(oldElm)
-
         // create new node
         createElm(
           vnode,
@@ -792,7 +789,6 @@ export function createPatchFunction (backend) {
         }
       }
     }
-
     invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch)
     return vnode.elm
   }

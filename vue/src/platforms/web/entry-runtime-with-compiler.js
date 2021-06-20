@@ -20,7 +20,6 @@ Vue.prototype.$mount = function (
   hydrating?: boolean
 ): Component {
   el = el && query(el)
-
   /* istanbul ignore if */
   if (el === document.body || el === document.documentElement) {
     process.env.NODE_ENV !== 'production' && warn(
@@ -28,7 +27,6 @@ Vue.prototype.$mount = function (
     )
     return this
   }
-
   const options = this.$options
   // resolve template/el and convert to render function
   if (!options.render) {

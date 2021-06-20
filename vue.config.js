@@ -1,7 +1,11 @@
 module.exports = {
   lintOnSave: false,
-  configureWebpack: {
-    externals: {
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true
+      }
     }
-  }
+  },
+  productionSourceMap: false
 }

@@ -1,6 +1,7 @@
 <template>
-  <div class="hello">
-    <h3>{{ msg }}</h3>
+  <div class="hello_box">
+    <h3>hello components</h3>
+    <!-- <h4>{{ msg }}</h4> -->
   </div>
 </template>
 
@@ -14,33 +15,20 @@ export default {
     return {
       firstName: 'Foo',
       lastName: 'Bar',
-      list: ['aaa', 'bbb', 'ccc']
     }
+  },
+  mounted() {
+    console.log('hello world mounted')
+  },
+  updated() {
+    console.log('hello updated', this.msg)
   },
   methods: {
     updateName() {
       this.firstName = 'firstName Foo'
       this.lastName = 'lastName Bar'
     }
-  },
-  watch: {
-    firstName (newVal, oldVal) {
-      console.log(newVal)
-      console.log(oldVal)
-    },
-    lastName (newVal, oldVal) {
-      console.log(newVal)
-      console.log(oldVal)
-    }
-  },
-  computed: {
-    firstComputedName() {
-      return `${this.firstName}-${this.lastName}-computedaaa`
-    },
-    secondComputedName() {
-      return `${this.lastName}-computedbbb`
-    }
-  },
+  }
 }
 </script>
 
