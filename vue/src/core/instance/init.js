@@ -77,7 +77,6 @@ export function initInternalComponent (vm: Component, options: InternalComponent
   const parentVnode = options._parentVnode
   opts.parent = options.parent
   opts._parentVnode = parentVnode
-
   const vnodeComponentOptions = parentVnode.componentOptions
   opts.propsData = vnodeComponentOptions.propsData
   opts._parentListeners = vnodeComponentOptions.listeners

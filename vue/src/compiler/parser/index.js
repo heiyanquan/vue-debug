@@ -609,7 +609,6 @@ function processSlotContent (el) {
         true
       )
     }
-    debugger
     el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope')
   } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
     /* istanbul ignore if */

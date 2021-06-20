@@ -22,8 +22,8 @@ new Vue({
   template: '<div>' +
   '<child>' +
   '<template slot-scope="props">' +
-  '<p class="p1">Hello from parent</p>' +
-  '<p class="p2">{{ props.text + props.msg}}</p>' +
+  '<p>Hello from parent</p>' +
+  '<p>{{ props.text + props.msg}}</p>' +
   '</template>' +
   '</child>' +
   '</div>',
@@ -31,13 +31,17 @@ new Vue({
     return {
       title: '我是标题',
       msg: '我是内容',
-      desc: '其它信息'
+      desc: '其它信息',
+      list: ['aaa', 'bbb', 'ccc'],
+      bindCls: 'list_bind'
     }
   },
   components: {
     Child
   },
   methods: {
-    
+    selectHandler() {
+      console.log('Child select!')
+    }
   },
 })
