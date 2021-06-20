@@ -1,4 +1,4 @@
-# vuex-debug
+# vue-debug
 
 ## Project setup
 ```
