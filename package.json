@@ -1,5 +1,5 @@
 {
-  "name": "vuex-debug",
+  "name": "vue-debug",
   "version": "0.1.0",
   "private": true,
   "scripts": {
