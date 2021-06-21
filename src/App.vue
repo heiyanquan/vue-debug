@@ -2,6 +2,7 @@
   <div id="home_wrapper" class="home_wrapper">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1 class="h2_view" ref="msgRef">{{msg}}</h1>
+    <h1 @click="init">handle click</h1>
   </div>
 </template>
 
@@ -14,25 +15,28 @@ export default {
     }
   },
   mounted() {
-    const { msgRef } = this.$refs
-    this.msg = 'msg111'
-    console.log(111, msgRef.innerHTML)
-    this.$nextTick(() => {
-      this.msg = 'msg222'
-      console.log(222, msgRef.innerHTML)
-    })
-    this.$nextTick(() => {
-      console.log(333, msgRef.innerHTML)
-      this.$nextTick(() => {
-        console.log(444, msgRef.innerHTML)
-      })
-    })
-    Promise.resolve().then(() => {
-      this.msg = 'msg333'
-      console.log(555, msgRef.innerHTML)
-    })
+    this.init()
   },
   methods: {
+    init() {
+      const { msgRef } = this.$refs
+      this.msg = 'msg111'
+      console.log(111, msgRef.innerHTML)
+      this.$nextTick(() => {
+        this.msg = 'msg222'
+        console.log(222, msgRef.innerHTML)
+      })
+      this.$nextTick(() => {
+        console.log(333, msgRef.innerHTML)
+        this.$nextTick(() => {
+          console.log(444, msgRef.innerHTML)
+        })
+      })
+      Promise.resolve().then(() => {
+        this.msg = 'msg333'
+        console.log(555, msgRef.innerHTML)
+      })
+    }
   },
 }
 </script>
